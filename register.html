@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="register.css" />
+    <title>Register</title>
+  </head>
+  <body>
+    <div class="register-container">
+      <h2>Register</h2>
+      <form action="#" method="POST">
+        <label for="name">Name:</label>
+        <input type="name" name="name" id="name" required />
+        <label for="surname">Surname:</label>
+        <input type="surname" name="surname" id="surname" required />
+        <label for="birthday">Birth Date:</label>
+        <input type="date" name="birthday" id="birthday" required />
+        <label for="country" name="country">Country:</label>
+        <select name="country" id="country" required>
+          <option value="tr">Turkey</option>
+          <option value="usa">USA</option>
+          <option value="germany">Germany</option>
+          <option value="uk">UK</option>
+        </select>
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" required />
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" required />
+        <label for="password">Confirm Password:</label>
+        <input type="password" name="password" id="password" required />
+        <button type="submit">Register</button>
+      </form>
+    </div>
+  </body>
+</html>
