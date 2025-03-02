@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerçek Zamanlı Görev Yönetim Uygulaması</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Görev Yönetim Uygulaması</h1>
+
+    <form id="taskForm">
+      <div class="form-group">
+        <label for="title">Başlık (Zorunlu):</label>
+        <input type="text" id="title" required>
+      </div>
+
+      <div class="form-group">
+        <label for="description">Açıklama (Opsiyonel):</label>
+        <textarea id="description"></textarea>
+      </div>
+
+      <div class="form-group">
+            <label for="priority">Öncelik:</label>
+                <div class="priority-group">
+                  <div>
+                        <input type="radio" id="low" name="priority" value="Düşük" required>
+                        <label for="low">Düşük</label>
+                 </div>
+                    <div>
+                        <input type="radio" id="medium" name="priority" value="Orta" required>
+                        <label for="medium">Orta</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="high" name="priority" value="Yüksek" required>
+                        <label for="high">Yüksek</label>
+                    </div>
+                </div>
+      </div>
+
+
+      <button type="submit">Görev Ekle</button>
+ </form>
+
+    <div id="error" class="error"></div>
+
+    <div class="filter-options">
+      <button id="filterCompleted">Sadece Tamamlananları Göster</button>
+      <button id="sortPriority">Önceliğe Göre Sırala (Düşük → Yüksek)</button>
+    </div>
+
+    <ul id="taskList"></ul>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

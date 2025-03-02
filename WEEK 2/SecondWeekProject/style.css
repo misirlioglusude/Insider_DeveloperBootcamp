@@ -1,0 +1,189 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.container {
+  width: 100%;
+  max-width: 700px;
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.container:hover {
+  transform: translateY(-5px);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 26px;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+input[type="text"], textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  background-color: #fafafa;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+input[type="text"]:focus, textarea:focus {
+  border-color: #5c6bc0;
+  background-color: #fff;
+  outline: none;
+}
+
+button {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  background: linear-gradient(135deg, #5c6bc0, #3f51b5);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #3f51b5, #5c6bc0);
+  transform: scale(1.05);
+}
+
+#taskList {
+  margin-top: 20px;
+}
+
+.task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 15px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border-left: 6px solid #5c6bc0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.task:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.task.completed {
+  background-color: #d9f7d3; 
+  border-left-color: #66bb6a; 
+  opacity: 0.9;
+  color: #000000; 
+}
+
+.error {
+  color: #d32f2f;
+  font-size: 14px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.filter-options {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.filter-options button {
+  width: 48%;
+  padding: 12px;
+  font-size: 14px;
+  background: #5c6bc0;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.filter-options button:hover {
+  background: #3f51b5;
+  transform: scale(1.05);
+}
+
+.priority-group {
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px; 
+}
+
+.priority-group input[type="radio"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #5c6bc0; 
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.priority-group input[type="radio"]:hover {
+  transform: scale(1.1);
+}
+
+.priority-group label {
+  font-weight: 600;
+  font-size: 16px;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.priority-group input[type="radio"]:checked + label {
+  color: #5c6bc0; 
+}
+
+.priority-group label:hover {
+  color: #3f51b5; 
+}
+.task-buttons {
+  display: flex;
+  gap: 10px; 
+}
+
+.complete-btn, .delete-btn {
+  padding: 10px 20px;
+  margin-top: 10px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+
