@@ -1,0 +1,16 @@
+[
+  { "name": "Macbook Pro", 
+    "price": "79.000", 
+    "link": "https://www.apple.com/tr/shop/buy-mac/macbook-pro/14-inç-m4" 
+  },
+  {
+    "name": "Iphone 16 Pro",
+    "price": "82.999",
+    "link": "https://www.apple.com/tr/iphone-16-pro/"
+  },
+  {
+    "name": "AirPods Pro 2",
+    "price": "11.690",
+    "link": "https://www.apple.com/tr/shop/buy-airpods/airpods-pro-2"
+  }
+]
