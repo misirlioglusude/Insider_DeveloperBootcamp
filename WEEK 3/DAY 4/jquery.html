@@ -1,0 +1,75 @@
+var script = document.createElement('script');
+script.src = "https://code.jquery.com/jquery-3.6.0.min.js";
+script.type = "text/javascript";
+document.getElementsByTagName('head')[0].appendChild(script);
+
+$(document).ready(function () { 
+    let products = [
+        {"name": "Akıllı Saat", "price": "₺2.499", "link": "#", "details": "Yüksek pil ömrü ve suya dayanıklı tasarım."},
+        {"name": "Kablosuz Kulaklık", "price": "₺1.299", "link": "#", "details": "Müthiş ses kalitesi ve gürültü engelleme özelliği."},
+        {"name": "Dizüstü Bilgisayar", "price": "₺19.999", "link": "#", "details": "16GB RAM, SSD depolama ve güçlü işlemci."},
+        {"name": "Akıllı Telefon", "price": "₺14.999", "link": "#", "details": "128GB hafıza, 5G destekli, 108MP kamera."}
+    ]; 
+
+    let productList = $('<div id="product-list"></div>').css({ 
+        "display": "flex", "gap": "20px", "justifyContent": "center", 
+        "flexWrap": "wrap", "padding": "20px" 
+    });
+
+    products.forEach((product, index) => {
+        let productCard = $('<div class="product-card"></div>').css({ 
+            "background": "#222", "color": "#fff", "padding": "15px", 
+            "borderRadius": "8px", "width": "200px", "textAlign": "center", 
+            "cursor": "pointer", "transition": "transform 0.3s ease, background 0.3s ease"
+        }).hover(function () { 
+            $(this).css({ "transform": "scale(1.1)", "background": "#333" }); 
+        }, function () { 
+            $(this).css({ "transform": "scale(1)", "background": "#222" }); 
+        }); 
+
+        let name = $('<h3></h3>').text(product.name); 
+        let price = $('<p></p>').text(product.price).css({ 
+            "color": "#00c7ff", "fontWeight": "bold" 
+        });
+
+        let button = $('<button>Detay</button>').css({ 
+            "background": "#00c7ff", "border": "none", "color": "white", 
+            "padding": "8px 12px", "borderRadius": "4px", "cursor": "pointer", "marginTop": "10px" 
+        }).click(function () { 
+            showPopup(product); 
+        });
+
+        productCard.append(name, price, button);
+        productList.append(productCard); 
+    });
+
+    $('body').append(productList); 
+
+    // Pop-up ekranı oluşturma
+    let popup = $('<div id="popup"></div>').css({ 
+        "position": "fixed", "top": "50%", "left": "50%", "transform": "translate(-50%, -50%)", 
+        "background": "#333", "color": "#fff", "padding": "20px", "borderRadius": "8px", 
+        "boxShadow": "0px 4px 10px rgba(0,0,0,0.3)", "display": "none", "textAlign": "center" 
+    });
+
+    let popupContent = $('<div id="popup-content"></div>'); 
+
+    let closeButton = $('<button>Kapat</button>').css({ 
+        "background": "#ff4c4c", "border": "none", "color": "white", 
+        "padding": "8px 12px", "borderRadius": "4px", "cursor": "pointer", "marginTop": "10px" 
+    }).click(function () { 
+        popup.fadeOut(); 
+    });
+
+    popup.append(popupContent, closeButton);
+    $('body').append(popup);
+
+    function showPopup(product) { 
+        popupContent.html(`
+            <h2>${product.name}</h2>
+            <p>${product.details}</p>
+            <p><strong>${product.price}</strong></p>
+        `); 
+        popup.fadeIn(); 
+    } 
+});
