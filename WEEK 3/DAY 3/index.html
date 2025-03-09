@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Job Application</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <button id="applyBtn">Apply</button>
+
+      <div id="form-container">
+        <h2>Job Application Form</h2>
+        <form id="applicationForm">
+          <label for="firstName">Name</label>
+          <input type="text" id="firstName" name="firstName" required />
+
+          <label for="lastName">Surname</label>
+          <input type="text" id="lastName" name="lastName" required />
+
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="phone">Phone Number</label>
+          <input type="text" id="phone" name="phone" required />
+
+          <label for="birthDate">Birth Date</label>
+          <input type="text" id="birthDate" name="birthDate" required />
+
+          <label for="position">Position</label>
+          <input type="text" id="position" name="position" required />
+
+          <button type="submit">Send</button>
+        </form>
+      </div>
+
+      <div id="success-message">
+        <p>Your application is successfully submitted!</p>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
