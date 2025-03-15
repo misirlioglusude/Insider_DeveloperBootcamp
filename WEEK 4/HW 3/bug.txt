@@ -1,0 +1,39 @@
+1- sepete urun ekleyince stok sayisinin azalmamasi 
+
+eski kod: 
+if (product.stock <= quantity) { 
+    throw new Error('Yetersiz stok!');
+}
+
+yeni kod:
+if (product.stock < quantity) {  
+    throw new Error('Yetersiz stok!');
+}
+
+ayrica bu addItem fonksiyonu icine urun sepete eklendikten sonra stok guncellemesi icin "product.stock -= quantity;" eklendi.
+
+
+2 - sepete ayni urunden birden fazla ekleyince fiyat hesaplamasi yapilmiyor
+
+eski kod:
+this.total = this.items.reduce((sum, item) => {
+    return sum + item.price; 
+}, 0);
+
+yeni kod:
+this.total = this.items.reduce((sum, item) => {
+    return sum + (item.price * item.quantity);
+}, 0);
+
+3 - indirimli fiyat hesaplamasi dogru gorunmuyor
+
+eski kod:
+if (this.discountApplied && this.total > 0) {
+    this.total *= 0.1; 
+}
+
+yeni kod:
+if (this.discountApplied && this.total > 0) {
+    this.total *= 0.9;
+}
+
